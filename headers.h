@@ -54,7 +54,7 @@ void traverse(bTree* tree, int root);
 void dispNode(bTreeNode* node);
 void writeFile(bTree* ptr_tree, bTreeNode* p, int pos);
 void readFile(bTree* ptr_tree, bTreeNode* p, int pos);
-int createData(bTree* file, int codigoLivro, char titulo[], char nomeCompletoPrimeiroAutor[], int anoPublicacao);
+//int createData(bTree* file, int codigoLivro, char titulo[], char nomeCompletoPrimeiroAutor[], int anoPublicacao);
 
 
 //void enterData(recordNode* record, int id_num, char country[], char Grate[], int Score, int Rate);
@@ -74,5 +74,9 @@ void removeFromNonLeaf(bTree* tree, bTreeNode *node, int idx);
 void removeFromLeaf (bTree* tree, bTreeNode *node, int idx);
 void removeNode(bTree* tree, bTreeNode* node, int k);
 int findKey(bTreeNode* node, int k);
+void hardPrint(bTree* tree);
 
 bool fileExists(char* filename);
+void removeFile(bTree* ptr_tree, int pos);
+	
+// void printRec(recordNode* rec);

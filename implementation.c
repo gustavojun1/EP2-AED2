@@ -386,7 +386,7 @@ void removeFromLeaf (bTree* tree, bTreeNode *node, int idx) {
     // }
 
     // Colocar o caractere # em páginas excluídas
-
+    
     // Reduce the count of keys
     node->noOfRecs--;
 }
@@ -457,6 +457,7 @@ void removeNode(bTree* tree, bTreeNode* node, int k) {
         }
         
 	    writeFile(tree, node, node->pos);
+
     }
     else {
        
@@ -745,6 +746,9 @@ bool removeFromTree(bTree* tree, int key) {
     readFile(tree, root, tree->root);
 
     bool found = search(tree, key);
+    //recordNode* found = search(tree, key); //pt2 - adiciona o -99999
+   // found->codigoLivro = -99999;
+    
     if(found);
         removeNode(tree, root, key); 
 
@@ -781,3 +785,18 @@ bool fileExists (char *filename) {
     struct stat   buffer;   
     return (stat (filename, &buffer) == 0);
 }
+
+void removeFile(bTree* ptr_tree, int pos) {
+    bTreeNode* p = (recordNode*) malloc(sizeof(bTreeNode));
+    p->pos = -999999;
+
+    writeFile(ptr_tree, p, pos);
+    free(p);
+}
+
+// void printRec(recordNode* rec) {
+    // printf("Codigo: \n", rec->codigoLivro);
+    // printf("Titulo: \n", rec->titulo);
+    // printf("Autor: \n", rec->nomeCompletoPrimeiroAutor);
+    // printf("Ano: \n", rec->anoPublicacao);
+// }
