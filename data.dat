@@ -1,3 +1,0 @@
-Criar um arquivo cujo nome é data.dat (nele, fazemos fopen, fclose etc)
-Criar uma funçao que ira escrever no data.dat -> utilizamos o fwrite fseek (SEEK_END) 
-Criar uma funçao que ira ler o arquivo data.dat -> fread e fseek
